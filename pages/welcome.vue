@@ -127,12 +127,17 @@ import { mdiArrowRight, mdiLockOpenVariantOutline } from '@mdi/js'
 import Page from '~/components/Page.vue'
 import Pricing from '~/components/Pricing.vue'
 import Logos from '~/components/Logos.vue'
+import { logEvent } from '@firebase/analytics'
+import { analytics } from '../plugins/firebase.prod'
 
 export default {
   components: {
     Page,
     Pricing,
     Logos,
+  },
+  mounted() {
+    logEvent(analytics, 'sign_up')
   },
   data() {
     return {

@@ -35,7 +35,7 @@ import Page from '~/components/Page.vue'
 import Product from '~/components/Product.vue'
 import UseCases from '~/components/UseCases.vue'
 import meta from '~/assets/json/meta.json'
-import { analytics } from '../plugins/firebase'
+import { analytics } from '../plugins/firebase.prod'
 import { logEvent } from 'firebase/analytics'
 
 export default {

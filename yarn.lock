@@ -955,7 +955,7 @@
   "resolved" "https://registry.npmjs.org/@firebase/analytics-types/-/analytics-types-0.7.0.tgz"
   "version" "0.7.0"
 
-"@firebase/analytics@0.7.10":
+"@firebase/analytics@^0.7.10", "@firebase/analytics@0.7.10":
   "integrity" "sha512-efZ9jdzTW1/COE5gVdJVdplsltooKPH7M3XpSi/kDyegR1sC05C5NQaiBIYcaTyX2yf1OVcCfsWEcZFhhPTPGw=="
   "resolved" "https://registry.npmjs.org/@firebase/analytics/-/analytics-0.7.10.tgz"
   "version" "0.7.10"
