@@ -35,6 +35,8 @@ import Page from '~/components/Page.vue'
 import Product from '~/components/Product.vue'
 import UseCases from '~/components/UseCases.vue'
 import meta from '~/assets/json/meta.json'
+import { analytics } from '../plugins/firebase'
+import { logEvent } from 'firebase/analytics'
 
 export default {
   components: {
@@ -43,6 +45,16 @@ export default {
     UseCases,
     Product,
   },
+
+  mounted() {
+    // firebase ana
+    // log event when a page is loaded
+    logEvent(analytics, 'page_view', {
+      page_path: this.$route.path,
+      page_title: this.$route.meta.title,
+    })
+  },
+
   data() {
     return {
       title: meta.hero.title,
