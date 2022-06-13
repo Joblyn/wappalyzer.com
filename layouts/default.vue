@@ -26,6 +26,8 @@ import Footer from '~/components/Footer.vue'
 import Drawer from '~/components/Drawer.vue'
 import mainNav from '~/assets/json/nav/main.json'
 import userNav from '~/assets/json/nav/user.json'
+import { logEvent } from '@firebase/analytics'
+import { analytics } from '../plugins/firebase.prod'
 
 export default {
   components: {
@@ -47,6 +49,8 @@ export default {
         !user.admin && user.impersonator && !user.impersonator.admin,
     }),
     userNav() {
+      this.isSignedIn && logEvent(analytics, 'sign_in')
+
       return this.isSignedIn
         ? userNav.filter((item) =>
             this.isMember

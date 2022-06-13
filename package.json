@@ -11,15 +11,18 @@
     "start": "nuxt start",
     "lint": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
     "deploy:v2": "ENVIRONMENT=v2 AWS_PROFILE=wappalyzer NODE_OPTIONS=--max-old-space-size=7168 nuxt generate && aws s3 sync dist s3://www.wappalyzer.com --acl public-read --cache-control max-age=31536000,public",
-    "deploy:quick:v2": "QUICK_BUILD=true ENVIRONMENT=v2 AWS_PROFILE=wappalyzer NODE_OPTIONS=--max-old-space-size=7168 nuxt generate && aws s3 sync dist s3://www.wappalyzer.com --acl public-read --cache-control max-age=31536000,public"
+    "deploy:quick:v2": "QUICK_BUILD=true ENVIRONMENT=v2 AWS_PROFILE=wappalyzer NODE_OPTIONS=--max-old-space-size=7168 nuxt generate && aws s3 sync dist s3://www.wappalyzer.com --acl public-read --cache-control max-age=31536000,public",
+    "firebase:deploy": "nuxt build && firebase deploy"
   },
   "dependencies": {
+    "@firebase/analytics": "^0.7.10",
     "@nuxtjs/axios": "^5.13.4",
     "@nuxtjs/gtm": "^2.4.0",
     "@nuxtjs/recaptcha": "^1.0.4",
     "amazon-cognito-identity-js": "^5.0.1",
     "cookie-universal-nuxt": "^2.1.4",
     "csv-parse": "^4.16.3",
+    "firebase": "^9.8.3",
     "nuxt": "^2.15.6",
     "nuxt-canonical": "^1.0.6",
     "nuxt-stripe-module": "^3.2.0",
